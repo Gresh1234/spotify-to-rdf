@@ -36,12 +36,26 @@ for i, row in df.head(100).iterrows():
         g.add((artist_id, RDF.type, URIRef(root + "Artist")))
         g.set((artist_id, URIRef(artist + "Name"), Literal(artist_name)))
         g.add((artist_id, URIRef(artist + "hasTrack"), track_id))
-    
+        
     g.add((track_id, URIRef(track + "releaseDate"), Literal(row['release_date'], datatype=XSD.gYear)))
 
     g.add((track_id, URIRef(track + "hasGenre"), Literal(row['genre'])))
 
-    g.add((URIRef(artist + "hasTrack"), ))
+
+g.add((URIRef(artist + "hasTrack"), RDFS.domain, URIRef(root + "Artist")))
+g.add((URIRef(artist + "hasTrack"), RDFS.range, URIRef(root + "Track")))
+
+g.add((URIRef(artist + "hasArtist"), RDFS.domain, URIRef(root + "Track")))
+g.add((URIRef(artist + "hasArtist"), RDFS.range, URIRef(root + "Artist")))
+
+g.add((URIRef(artist + "hasArtist"), OWL.inverseOf, URIRef(artist + "hasTrack")))
+
+#g.add((URIRef(artist + "hasCollaboratedWith"), OWL.propertyChainAxiom, URIRef(artist + "hasTrack") , URIRef(artist + "hasArtist")))
+g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.IrreflexiveProperty))
+g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.SymmetricProperty))
+
+# g.add((URIRef(artist + "hasArtist"), ni idea, URIRef(artist + "hasCollaboratedWith")))
+
 
 
 
