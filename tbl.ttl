@@ -1,0 +1,139 @@
+@base <http://example.org/#> .
+@prefix artist: <http://example.org/artists/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix track: <http://example.org/tracks/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+artist:hasArtist rdfs:domain <Track> ;
+    rdfs:range <Artist> ;
+    owl:inverseOf artist:hasTrack .
+
+artist:hasCollaboratedWith a owl:IrreflexiveProperty,
+        owl:SymmetricProperty ;
+    owl:propertyChainAxiom <ligma> .
+
+<ligma> rdf:first artist:hasTrack ;
+    rdf:rest ( track:hasArtist ) .
+
+artist:187g1i66uImYlyoq3HQTbZ a <Artist> ;
+    artist:Name "Capt John Handy's New Orleans Four" ;
+    artist:hasTrack track:4mU1bmgwMCZPCg6W0LJ6FO .
+
+artist:48YxSlb23RAaCd4RyHcV9V a <Artist> ;
+    artist:Name "Herman's Hermits" ;
+    artist:hasTrack track:0krGrryTVif71gYlmkJBoI .
+
+artist:7ElLJnEArxZLFOkwmRc8FP a <Artist> ;
+    artist:Name "Capt. John Handy" ;
+    artist:hasTrack track:4mU1bmgwMCZPCg6W0LJ6FO .
+
+track:0krGrryTVif71gYlmkJBoI a <Track> ;
+    track:duration_ms 173573 ;
+    track:explicit 0 ;
+    track:hasArtist artist:48YxSlb23RAaCd4RyHcV9V ;
+    track:hasGenre "Folk" ;
+    track:name "No Milk Today" ;
+    track:popularity 5 ;
+    track:releaseDate "2020"^^xsd:gYear .
+
+track:2d4khzfoWSPMCrOQjcYMwt a <Track> ;
+    track:duration_ms 157160 ;
+    track:explicit 0 ;
+    track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
+    track:hasGenre "Reggae" ;
+    track:name "Wine" ;
+    track:popularity 0 ;
+    track:releaseDate "2011"^^xsd:gYear .
+
+track:2ltMWXxDNltgqCxFiGrRXt a <Track> ;
+    track:duration_ms 138533 ;
+    track:explicit 0 ;
+    track:hasArtist artist:3UmBeGyNwr4iDWi1vTxWi8 ;
+    track:hasGenre "Ska" ;
+    track:name "I'm the One" ;
+    track:popularity 11 ;
+    track:releaseDate "2008"^^xsd:gYear .
+
+track:3cRQxtZHMTcVov3OBxapXs a <Track> ;
+    track:duration_ms 179493 ;
+    track:explicit 0 ;
+    track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
+    track:hasGenre "Ska" ;
+    track:name "Molly" ;
+    track:popularity 0 ;
+    track:releaseDate "2011"^^xsd:gYear .
+
+track:5OBK8TEDxH9HjZ1GEwjMZG a <Track> ;
+    track:duration_ms 176720 ;
+    track:explicit 0 ;
+    track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
+    track:hasGenre "Country" ;
+    track:name "Blue Eyes Crying in the Rain" ;
+    track:popularity 0 ;
+    track:releaseDate "2011"^^xsd:gYear .
+
+track:5XMzFlJLwjDCss5pza1S8x a <Track> ;
+    track:duration_ms 174760 ;
+    track:explicit 0 ;
+    track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
+    track:hasGenre "Soundtrack" ;
+    track:name "City Lights" ;
+    track:popularity 0 ;
+    track:releaseDate "2011"^^xsd:gYear .
+
+track:6KTWsN4A5xBMDeuskQRtfQ a <Track> ;
+    track:duration_ms 150867 ;
+    track:explicit 0 ;
+    track:hasArtist artist:3UmBeGyNwr4iDWi1vTxWi8 ;
+    track:hasGenre "Rock" ;
+    track:name "Tomorrow" ;
+    track:popularity 5 ;
+    track:releaseDate "2008"^^xsd:gYear .
+
+track:6ZkhcjPtLp8OL6MZQQqKTK a <Track> ;
+    track:duration_ms 132173 ;
+    track:explicit 0 ;
+    track:hasArtist artist:3UmBeGyNwr4iDWi1vTxWi8 ;
+    track:hasGenre "Soul" ;
+    track:name "Rip It Up" ;
+    track:popularity 6 ;
+    track:releaseDate "2008"^^xsd:gYear .
+
+track:7EW4LyVLnjVqArsMIqiIHE a <Track> ;
+    track:duration_ms 151613 ;
+    track:explicit 0 ;
+    track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
+    track:hasGenre "Soundtrack" ;
+    track:name "Remember Me" ;
+    track:popularity 0 ;
+    track:releaseDate "2011"^^xsd:gYear .
+
+artist:hasTrack rdfs:domain <Artist> ;
+    rdfs:range <Track> .
+
+track:4mU1bmgwMCZPCg6W0LJ6FO a <Track> ;
+    track:duration_ms 215893 ;
+    track:explicit 0 ;
+    track:hasArtist artist:187g1i66uImYlyoq3HQTbZ,
+        artist:7ElLJnEArxZLFOkwmRc8FP ;
+    track:hasGenre "World" ;
+    track:name "Yearning" ;
+    track:popularity 0 ;
+    track:releaseDate "2008"^^xsd:gYear .
+
+artist:3UmBeGyNwr4iDWi1vTxWi8 a <Artist> ;
+    artist:Name "Gerry & The Pacemakers" ;
+    artist:hasTrack track:2ltMWXxDNltgqCxFiGrRXt,
+        track:6KTWsN4A5xBMDeuskQRtfQ,
+        track:6ZkhcjPtLp8OL6MZQQqKTK .
+
+artist:0gWNSMYCSHF4wxIs1XTSDh a <Artist> ;
+    artist:Name "Bill Anderson" ;
+    artist:hasTrack track:2d4khzfoWSPMCrOQjcYMwt,
+        track:3cRQxtZHMTcVov3OBxapXs,
+        track:5OBK8TEDxH9HjZ1GEwjMZG,
+        track:5XMzFlJLwjDCss5pza1S8x,
+        track:7EW4LyVLnjVqArsMIqiIHE .
+

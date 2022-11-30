@@ -11,13 +11,13 @@ df = pd.read_csv("csv/tracks_genre.csv",sep=",",quotechar='"') #import csv file
 
 g = Graph(base="http://example.org/#")
 root = Namespace("http://example.org/#")
-track = Namespace("http://example.org/tracks/")
-artist = Namespace("http://example.org/artists/")
+track = Namespace("http://example.org/tracks/#")
+artist = Namespace("http://example.org/artists/#")
 
 g.bind("track", track)
 g.bind("artist", artist)
 
-for i, row in df.head(10).iterrows():
+for i, row in df.iterrows():
     track_id = URIRef(track + urllib.parse.quote(row['id']))
 
     g.add((track_id, RDF.type, URIRef(root + "Track")))
@@ -59,4 +59,5 @@ g.add((URIRef(artist + "hasCollaboratedWith"), OWL.propertyChainAxiom, URIRef(ro
 g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.IrreflexiveProperty))
 g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.SymmetricProperty))
 
-print(g.serialize())
+print(g.serialize(format="ttl"))
+g.serialize(destination="spotify.ttl")
