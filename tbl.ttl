@@ -6,8 +6,7 @@
 @prefix track: <http://example.org/tracks/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-artist:hasCollaboratedWith a owl:IrreflexiveProperty,
-        owl:SymmetricProperty ;
+artist:hasCollaboratedWith a owl:SymmetricProperty ;
     rdfs:domain spotify:Artist ;
     rdfs:range spotify:Artist ;
     owl:propertyChainAxiom spotify:ligma .

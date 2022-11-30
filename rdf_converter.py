@@ -42,7 +42,7 @@ for i, row in df.iterrows():
         g.add((track_id, URIRef(track + "hasArtist"), artist_id))
 
         g.add((artist_id, RDF.type, URIRef(root + "Artist")))
-        g.set((artist_id, URIRef(artist + "Name"), Literal(artist_name)))
+        g.set((artist_id, URIRef(artist + "name"), Literal(artist_name)))
         g.add((artist_id, URIRef(artist + "hasTrack"), track_id))
 
     g.add((track_id, URIRef(track + "releaseDate"), Literal(
@@ -66,7 +66,6 @@ c = Collection(g, URIRef(root + "ligma"), [URIRef(artist + "hasTrack") , URIRef(
     track + "hasArtist")])
 
 g.add((URIRef(artist + "hasCollaboratedWith"), OWL.propertyChainAxiom, URIRef(root + "ligma")))
-g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.IrreflexiveProperty))
 g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.SymmetricProperty))
 
 t1 = datetime.now()
