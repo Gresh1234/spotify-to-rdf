@@ -1,35 +1,33 @@
-@base <http://example.org/#> .
 @prefix artist: <http://example.org/artists/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spotify: <http://example.org/> .
 @prefix track: <http://example.org/tracks/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-artist:hasArtist rdfs:domain <Track> ;
-    rdfs:range <Artist> ;
-    owl:inverseOf artist:hasTrack .
-
 artist:hasCollaboratedWith a owl:IrreflexiveProperty,
         owl:SymmetricProperty ;
-    owl:propertyChainAxiom <ligma> .
+    rdfs:domain spotify:Artist ;
+    rdfs:range spotify:Artist ;
+    owl:propertyChainAxiom spotify:ligma .
 
-<ligma> rdf:first artist:hasTrack ;
-    rdf:rest ( track:hasArtist ) .
-
-artist:187g1i66uImYlyoq3HQTbZ a <Artist> ;
+artist:187g1i66uImYlyoq3HQTbZ a spotify:Artist ;
     artist:Name "Capt John Handy's New Orleans Four" ;
     artist:hasTrack track:4mU1bmgwMCZPCg6W0LJ6FO .
 
-artist:48YxSlb23RAaCd4RyHcV9V a <Artist> ;
+artist:48YxSlb23RAaCd4RyHcV9V a spotify:Artist ;
     artist:Name "Herman's Hermits" ;
     artist:hasTrack track:0krGrryTVif71gYlmkJBoI .
 
-artist:7ElLJnEArxZLFOkwmRc8FP a <Artist> ;
+artist:7ElLJnEArxZLFOkwmRc8FP a spotify:Artist ;
     artist:Name "Capt. John Handy" ;
     artist:hasTrack track:4mU1bmgwMCZPCg6W0LJ6FO .
 
-track:0krGrryTVif71gYlmkJBoI a <Track> ;
+spotify:ligma rdf:first artist:hasTrack ;
+    rdf:rest ( track:hasArtist ) .
+
+track:0krGrryTVif71gYlmkJBoI a spotify:Track ;
     track:duration_ms 173573 ;
     track:explicit 0 ;
     track:hasArtist artist:48YxSlb23RAaCd4RyHcV9V ;
@@ -38,7 +36,7 @@ track:0krGrryTVif71gYlmkJBoI a <Track> ;
     track:popularity 5 ;
     track:releaseDate "2020"^^xsd:gYear .
 
-track:2d4khzfoWSPMCrOQjcYMwt a <Track> ;
+track:2d4khzfoWSPMCrOQjcYMwt a spotify:Track ;
     track:duration_ms 157160 ;
     track:explicit 0 ;
     track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
@@ -47,7 +45,7 @@ track:2d4khzfoWSPMCrOQjcYMwt a <Track> ;
     track:popularity 0 ;
     track:releaseDate "2011"^^xsd:gYear .
 
-track:2ltMWXxDNltgqCxFiGrRXt a <Track> ;
+track:2ltMWXxDNltgqCxFiGrRXt a spotify:Track ;
     track:duration_ms 138533 ;
     track:explicit 0 ;
     track:hasArtist artist:3UmBeGyNwr4iDWi1vTxWi8 ;
@@ -56,7 +54,7 @@ track:2ltMWXxDNltgqCxFiGrRXt a <Track> ;
     track:popularity 11 ;
     track:releaseDate "2008"^^xsd:gYear .
 
-track:3cRQxtZHMTcVov3OBxapXs a <Track> ;
+track:3cRQxtZHMTcVov3OBxapXs a spotify:Track ;
     track:duration_ms 179493 ;
     track:explicit 0 ;
     track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
@@ -65,7 +63,7 @@ track:3cRQxtZHMTcVov3OBxapXs a <Track> ;
     track:popularity 0 ;
     track:releaseDate "2011"^^xsd:gYear .
 
-track:5OBK8TEDxH9HjZ1GEwjMZG a <Track> ;
+track:5OBK8TEDxH9HjZ1GEwjMZG a spotify:Track ;
     track:duration_ms 176720 ;
     track:explicit 0 ;
     track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
@@ -74,7 +72,7 @@ track:5OBK8TEDxH9HjZ1GEwjMZG a <Track> ;
     track:popularity 0 ;
     track:releaseDate "2011"^^xsd:gYear .
 
-track:5XMzFlJLwjDCss5pza1S8x a <Track> ;
+track:5XMzFlJLwjDCss5pza1S8x a spotify:Track ;
     track:duration_ms 174760 ;
     track:explicit 0 ;
     track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
@@ -83,7 +81,7 @@ track:5XMzFlJLwjDCss5pza1S8x a <Track> ;
     track:popularity 0 ;
     track:releaseDate "2011"^^xsd:gYear .
 
-track:6KTWsN4A5xBMDeuskQRtfQ a <Track> ;
+track:6KTWsN4A5xBMDeuskQRtfQ a spotify:Track ;
     track:duration_ms 150867 ;
     track:explicit 0 ;
     track:hasArtist artist:3UmBeGyNwr4iDWi1vTxWi8 ;
@@ -92,7 +90,7 @@ track:6KTWsN4A5xBMDeuskQRtfQ a <Track> ;
     track:popularity 5 ;
     track:releaseDate "2008"^^xsd:gYear .
 
-track:6ZkhcjPtLp8OL6MZQQqKTK a <Track> ;
+track:6ZkhcjPtLp8OL6MZQQqKTK a spotify:Track ;
     track:duration_ms 132173 ;
     track:explicit 0 ;
     track:hasArtist artist:3UmBeGyNwr4iDWi1vTxWi8 ;
@@ -101,7 +99,7 @@ track:6ZkhcjPtLp8OL6MZQQqKTK a <Track> ;
     track:popularity 6 ;
     track:releaseDate "2008"^^xsd:gYear .
 
-track:7EW4LyVLnjVqArsMIqiIHE a <Track> ;
+track:7EW4LyVLnjVqArsMIqiIHE a spotify:Track ;
     track:duration_ms 151613 ;
     track:explicit 0 ;
     track:hasArtist artist:0gWNSMYCSHF4wxIs1XTSDh ;
@@ -110,10 +108,14 @@ track:7EW4LyVLnjVqArsMIqiIHE a <Track> ;
     track:popularity 0 ;
     track:releaseDate "2011"^^xsd:gYear .
 
-artist:hasTrack rdfs:domain <Artist> ;
-    rdfs:range <Track> .
+track:hasArtist rdfs:domain spotify:Track ;
+    rdfs:range spotify:Artist ;
+    owl:inverseOf artist:hasTrack .
 
-track:4mU1bmgwMCZPCg6W0LJ6FO a <Track> ;
+artist:hasTrack rdfs:domain spotify:Artist ;
+    rdfs:range spotify:Track .
+
+track:4mU1bmgwMCZPCg6W0LJ6FO a spotify:Track ;
     track:duration_ms 215893 ;
     track:explicit 0 ;
     track:hasArtist artist:187g1i66uImYlyoq3HQTbZ,
@@ -123,13 +125,13 @@ track:4mU1bmgwMCZPCg6W0LJ6FO a <Track> ;
     track:popularity 0 ;
     track:releaseDate "2008"^^xsd:gYear .
 
-artist:3UmBeGyNwr4iDWi1vTxWi8 a <Artist> ;
+artist:3UmBeGyNwr4iDWi1vTxWi8 a spotify:Artist ;
     artist:Name "Gerry & The Pacemakers" ;
     artist:hasTrack track:2ltMWXxDNltgqCxFiGrRXt,
         track:6KTWsN4A5xBMDeuskQRtfQ,
         track:6ZkhcjPtLp8OL6MZQQqKTK .
 
-artist:0gWNSMYCSHF4wxIs1XTSDh a <Artist> ;
+artist:0gWNSMYCSHF4wxIs1XTSDh a spotify:Artist ;
     artist:Name "Bill Anderson" ;
     artist:hasTrack track:2d4khzfoWSPMCrOQjcYMwt,
         track:3cRQxtZHMTcVov3OBxapXs,

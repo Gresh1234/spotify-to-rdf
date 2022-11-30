@@ -1,22 +1,28 @@
 '''ligma'''
 import ast
 import urllib.parse #for parsing strings to URI's
+from datetime import datetime
 import pandas as pd #for handling csv and csv contents
 from rdflib import Graph, Literal, RDF, URIRef, Namespace #basic RDF handling
 from rdflib.graph import Collection
 from rdflib.namespace import XSD, RDFS, OWL #most common namespaces
 
+t0 = datetime.now()
 
+print("Importando csv...")
 df = pd.read_csv("csv/tracks_genre.csv",sep=",",quotechar='"') #import csv file
 
-g = Graph(base="http://example.org/#")
-root = Namespace("http://example.org/#")
-track = Namespace("http://example.org/tracks/#")
-artist = Namespace("http://example.org/artists/#")
+print("Creando grafo...")
+g = Graph()
+root = Namespace("http://example.org/")
+track = Namespace("http://example.org/tracks/")
+artist = Namespace("http://example.org/artists/")
 
+g.bind("spotify", root)
 g.bind("track", track)
 g.bind("artist", artist)
 
+print("Creando tuplas...")
 for i, row in df.iterrows():
     track_id = URIRef(track + urllib.parse.quote(row['id']))
 
@@ -44,13 +50,17 @@ for i, row in df.iterrows():
 
     g.add((track_id, URIRef(track + "hasGenre"), Literal(row['genre'])))
 
+print("Creando ontología...")
+g.add((URIRef(artist + "hasCollaboratedWith"), RDFS.domain, URIRef(root + "Artist")))
+g.add((URIRef(artist + "hasCollaboratedWith"), RDFS.range, URIRef(root + "Artist")))
+
 g.add((URIRef(artist + "hasTrack"), RDFS.domain, URIRef(root + "Artist")))
 g.add((URIRef(artist + "hasTrack"), RDFS.range, URIRef(root + "Track")))
 
-g.add((URIRef(artist + "hasArtist"), RDFS.domain, URIRef(root + "Track")))
-g.add((URIRef(artist + "hasArtist"), RDFS.range, URIRef(root + "Artist")))
+g.add((URIRef(track + "hasArtist"), RDFS.domain, URIRef(root + "Track")))
+g.add((URIRef(track + "hasArtist"), RDFS.range, URIRef(root + "Artist")))
 
-g.add((URIRef(artist + "hasArtist"), OWL.inverseOf, URIRef(artist + "hasTrack")))
+g.add((URIRef(track + "hasArtist"), OWL.inverseOf, URIRef(artist + "hasTrack")))
 
 c = Collection(g, URIRef(root + "ligma"), [URIRef(artist + "hasTrack") , URIRef(
     track + "hasArtist")])
@@ -59,5 +69,15 @@ g.add((URIRef(artist + "hasCollaboratedWith"), OWL.propertyChainAxiom, URIRef(ro
 g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.IrreflexiveProperty))
 g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.SymmetricProperty))
 
-print(g.serialize(format="ttl"))
-g.serialize(destination="spotify.ttl")
+t1 = datetime.now()
+
+print(f"RDF creado en {(t1 - t0).total_seconds()} segundos.")
+print("Creando archivo 'spotify.ttl'...")
+
+g.serialize(format="ttl", destination="spotify.ttl")
+
+t2 = datetime.now()
+
+print(f"Archivo creado en {(t2 - t1).total_seconds()} segundos.")
+
+print(f"Script ejecutado en {(t2 - t0).total_seconds()} segundos.")
