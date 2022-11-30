@@ -12,6 +12,10 @@ t0 = datetime.now()
 print("Importando csv...")
 df = pd.read_csv("csv/tracks_genre.csv",sep=",",quotechar='"') #import csv file
 
+keys = {0: "C", 1: "C#", 2:"D", 3:"D#", 4: "E", 5:"F",
+    6:"F#", 7:"G", 8:"G#", 9:"A", 10:"A#",11:"B"}
+modes = {0: "Minor", 1: "Major"}
+
 print("Creando grafo...")
 g = Graph()
 root = Namespace("http://example.org/")
@@ -47,7 +51,18 @@ for i, row in df.iterrows():
 
     g.add((track_id, URIRef(track + "releaseDate"), Literal(
         row['release_date'], datatype=XSD.gYear)))
-
+    g.set((track_id, URIRef(track + "danceability"), Literal(row['danceability'])))
+    g.set((track_id, URIRef(track + "energy"), Literal(row['energy'])))
+    g.set((track_id, URIRef(track + "key"), Literal(keys[row['key']])))
+    g.set((track_id, URIRef(track + "loudness"), Literal(row['loudness'])))
+    g.set((track_id, URIRef(track + "mode"), Literal(modes[row['mode']])))
+    g.set((track_id, URIRef(track + "speechiness"), Literal(row['speechiness'])))
+    g.set((track_id, URIRef(track + "acousticness"), Literal(row['acousticness'])))
+    g.set((track_id, URIRef(track + "instrumentalness"), Literal(row['instrumentalness'])))
+    g.set((track_id, URIRef(track + "liveness"), Literal(row['liveness'])))
+    g.set((track_id, URIRef(track + "valence"), Literal(row['valence'])))
+    g.set((track_id, URIRef(track + "tempo"), Literal(row['tempo'])))
+    g.set((track_id, URIRef(track + "time_signature"), Literal(f"{row['time_signature']}/4")))
     g.add((track_id, URIRef(track + "hasGenre"), Literal(row['genre'])))
 
 print("Creando ontología...")
