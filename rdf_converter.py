@@ -9,6 +9,7 @@ from rdflib.namespace import XSD, RDFS, OWL #most common namespaces
 
 IMPORT_PATH = "csv/tracks_genre.csv"
 EXPORT_PATH = "tbl.ttl"
+LIMIT = 1000
 
 t0 = datetime.now()
 
@@ -24,13 +25,19 @@ g = Graph(base="http://example.org/spotify#")
 root = Namespace("http://example.org/spotify#")
 track = Namespace("http://example.org/spotify/tracks#")
 artist = Namespace("http://example.org/spotify/artists#")
+genre = Namespace("http://example.org/spotify/genre#")
 
 g.bind("", root)
 g.bind("track", track)
 g.bind("artist", artist)
+g.bind("genre", genre)
 
 print("Creando tuplas...")
-for i, row in df.head(1000).iterrows():
+
+if LIMIT > 0:
+    df = df.head(LIMIT)
+
+for i, row in df.iterrows():
     track_id = URIRef(track + urllib.parse.quote(row['id']))
 
     g.add((track_id, RDF.type, URIRef(root + "Track")))
@@ -66,7 +73,12 @@ for i, row in df.head(1000).iterrows():
     g.set((track_id, URIRef(track + "valence"), Literal(row['valence'])))
     g.set((track_id, URIRef(track + "tempo"), Literal(row['tempo'])))
     g.set((track_id, URIRef(track + "time_signature"), Literal(f"{row['time_signature']}/4")))
-    g.add((track_id, URIRef(track + "hasGenre"), Literal(row['genre'])))
+
+    genre_id = URIRef(genre + urllib.parse.quote(row['genre']))
+
+    g.add((genre_id, RDF.type, URIRef(root + "Genre")))
+    g.add((track_id, URIRef(track + "hasGenre"), genre_id))
+    g.add((genre_id, URIRef(genre + "hasTrack"), track_id))
 
 print("Creando ontología...")
 g.add((URIRef(artist + "hasCollaboratedWith"), RDFS.domain, URIRef(root + "Artist")))
@@ -75,16 +87,26 @@ g.add((URIRef(artist + "hasCollaboratedWith"), RDFS.range, URIRef(root + "Artist
 g.add((URIRef(artist + "hasTrack"), RDFS.domain, URIRef(root + "Artist")))
 g.add((URIRef(artist + "hasTrack"), RDFS.range, URIRef(root + "Track")))
 
+g.add((URIRef(track + "hasGenre"), RDFS.domain, URIRef(root + "Track")))
+g.add((URIRef(track + "hasGenre"), RDFS.range, URIRef(root + "Genre")))
+
 g.add((URIRef(track + "hasArtist"), RDFS.domain, URIRef(root + "Track")))
 g.add((URIRef(track + "hasArtist"), RDFS.range, URIRef(root + "Artist")))
 
 g.add((URIRef(track + "hasArtist"), OWL.inverseOf, URIRef(artist + "hasTrack")))
+g.add((URIRef(track + "hasGenre"), OWL.inverseOf, URIRef(genre + "hasTrack")))
+g.add((URIRef(artist + "hasGenre"), OWL.inverseOf, URIRef(genre + "hasArtist")))
 
-c = Collection(g, URIRef(root + "propChain1"), [URIRef(artist + "hasTrack") , URIRef(
+Collection(g, URIRef(root + "propChain1"), [URIRef(artist + "hasTrack") , URIRef(
     track + "hasArtist")])
+
+Collection(g, URIRef(root + "propChain2"), [URIRef(artist + "hasTrack") , URIRef(
+    track + "hasGenre")])
 
 g.add((URIRef(artist + "hasCollaboratedWith"), OWL.propertyChainAxiom, URIRef(root + "propChain1")))
 g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.SymmetricProperty))
+
+g.add((URIRef(artist + "hasGenre"), OWL.propertyChainAxiom, URIRef(root + "propChain2")))
 
 t1 = datetime.now()
 
