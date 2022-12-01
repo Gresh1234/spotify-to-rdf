@@ -20,10 +20,10 @@ keys = {0: "C", 1: "C#", 2:"D", 3:"D#", 4: "E", 5:"F",
 modes = {0: "Minor", 1: "Major"}
 
 print("Creando grafo...")
-g = Graph(base="http://example.org/spotify#")
-root = Namespace("http://example.org/spotify#")
-track = Namespace("http://example.org/spotify#tracks/")
-artist = Namespace("http://example.org/spotify#artists/")
+g = Graph(base="http://example.org/spotify/#")
+root = Namespace("http://example.org/spotify/#")
+track = Namespace("http://example.org/spotify/tracks/#")
+artist = Namespace("http://example.org/spotify/artists/#")
 
 g.bind("track", track)
 g.bind("artist", artist)
