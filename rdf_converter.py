@@ -1,34 +1,35 @@
 '''ligma'''
-import ast
+import ast #for parsing csv lists to python lists
 import urllib.parse #for parsing strings to URI's
-from datetime import datetime
+from datetime import datetime #for measuring the runtime of the script
 import pandas as pd #for handling csv and csv contents
 from rdflib import Graph, Literal, RDF, URIRef, Namespace #basic RDF handling
-from rdflib.graph import Collection
+from rdflib.graph import Collection #RDF lists for the ontology
 from rdflib.namespace import XSD, RDFS, OWL #most common namespaces
+
+IMPORT_PATH = "csv/tracks_genre.csv"
+EXPORT_PATH = "tbl.ttl"
 
 t0 = datetime.now()
 
-print("Importando csv...")
-df = pd.read_csv("csv/tracks_genre.csv",sep=",",quotechar='"') #import csv file
+print("Importando archivo '" + IMPORT_PATH +"'...")
+df = pd.read_csv(IMPORT_PATH, sep=",", quotechar='"') #import csv file
 
 keys = {0: "C", 1: "C#", 2:"D", 3:"D#", 4: "E", 5:"F",
     6:"F#", 7:"G", 8:"G#", 9:"A", 10:"A#",11:"B"}
 modes = {0: "Minor", 1: "Major"}
 
-EXPORT_PATH = "tbl.ttl"
-
 print("Creando grafo...")
-g = Graph(base="http://example.org/#")
-root = Namespace("http://example.org/#")
-track = Namespace("http://example.org/tracks/")
-artist = Namespace("http://example.org/artists/")
+g = Graph(base="http://example.org/spotify#")
+root = Namespace("http://example.org/spotify#")
+track = Namespace("http://example.org/spotify#tracks/")
+artist = Namespace("http://example.org/spotify#artists/")
 
 g.bind("track", track)
 g.bind("artist", artist)
 
 print("Creando tuplas...")
-for i, row in df.head(5000).iterrows():
+for i, row in df.head(1000).iterrows():
     track_id = URIRef(track + urllib.parse.quote(row['id']))
 
     g.add((track_id, RDF.type, URIRef(root + "Track")))
