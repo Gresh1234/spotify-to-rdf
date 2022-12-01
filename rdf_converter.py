@@ -20,11 +20,12 @@ keys = {0: "C", 1: "C#", 2:"D", 3:"D#", 4: "E", 5:"F",
 modes = {0: "Minor", 1: "Major"}
 
 print("Creando grafo...")
-g = Graph(base="http://example.org/spotify/#")
-root = Namespace("http://example.org/spotify/#")
-track = Namespace("http://example.org/spotify/tracks/#")
-artist = Namespace("http://example.org/spotify/artists/#")
+g = Graph(base="http://example.org/spotify#")
+root = Namespace("http://example.org/spotify#")
+track = Namespace("http://example.org/spotify/tracks#")
+artist = Namespace("http://example.org/spotify/artists#")
 
+g.bind("", root)
 g.bind("track", track)
 g.bind("artist", artist)
 
@@ -33,7 +34,7 @@ for i, row in df.head(1000).iterrows():
     track_id = URIRef(track + urllib.parse.quote(row['id']))
 
     g.add((track_id, RDF.type, URIRef(root + "Track")))
-    g.set((track_id, URIRef(track + "name"), Literal(row['name'])))
+    g.set((track_id, RDFS.label, Literal(row['name'])))
     g.set((track_id, URIRef(track + "popularity"), Literal(row['popularity'])))
     g.set((track_id, URIRef(track + "duration_ms"), Literal(row['duration_ms'])))
     g.set((track_id, URIRef(track + "explicit"), Literal(row['explicit'])))
@@ -48,7 +49,7 @@ for i, row in df.head(1000).iterrows():
         g.add((track_id, URIRef(track + "hasArtist"), artist_id))
 
         g.add((artist_id, RDF.type, URIRef(root + "Artist")))
-        g.set((artist_id, URIRef(artist + "name"), Literal(artist_name)))
+        g.set((artist_id, RDFS.label, Literal(artist_name)))
         g.add((artist_id, URIRef(artist + "hasTrack"), track_id))
 
     g.add((track_id, URIRef(track + "releaseDate"), Literal(
@@ -79,10 +80,10 @@ g.add((URIRef(track + "hasArtist"), RDFS.range, URIRef(root + "Artist")))
 
 g.add((URIRef(track + "hasArtist"), OWL.inverseOf, URIRef(artist + "hasTrack")))
 
-c = Collection(g, URIRef(root + "ligma"), [URIRef(artist + "hasTrack") , URIRef(
+c = Collection(g, URIRef(root + "propChain1"), [URIRef(artist + "hasTrack") , URIRef(
     track + "hasArtist")])
 
-g.add((URIRef(artist + "hasCollaboratedWith"), OWL.propertyChainAxiom, URIRef(root + "ligma")))
+g.add((URIRef(artist + "hasCollaboratedWith"), OWL.propertyChainAxiom, URIRef(root + "propChain1")))
 g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.SymmetricProperty))
 
 t1 = datetime.now()
