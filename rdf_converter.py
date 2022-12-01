@@ -16,18 +16,19 @@ keys = {0: "C", 1: "C#", 2:"D", 3:"D#", 4: "E", 5:"F",
     6:"F#", 7:"G", 8:"G#", 9:"A", 10:"A#",11:"B"}
 modes = {0: "Minor", 1: "Major"}
 
+EXPORT_PATH = "tbl.ttl"
+
 print("Creando grafo...")
-g = Graph()
-root = Namespace("http://example.org/")
+g = Graph(base="http://example.org/#")
+root = Namespace("http://example.org/#")
 track = Namespace("http://example.org/tracks/")
 artist = Namespace("http://example.org/artists/")
 
-g.bind("spotify", root)
 g.bind("track", track)
 g.bind("artist", artist)
 
 print("Creando tuplas...")
-for i, row in df.iterrows():
+for i, row in df.head(5000).iterrows():
     track_id = URIRef(track + urllib.parse.quote(row['id']))
 
     g.add((track_id, RDF.type, URIRef(root + "Track")))
@@ -86,9 +87,9 @@ g.add((URIRef(artist + "hasCollaboratedWith"), RDF.type, OWL.SymmetricProperty))
 t1 = datetime.now()
 
 print(f"RDF creado en {(t1 - t0).total_seconds()} segundos.")
-print("Creando archivo 'spotify.ttl'...")
+print("Creando archivo '" + EXPORT_PATH + "'...")
 
-g.serialize(format="ttl", destination="spotify.ttl")
+g.serialize(format="ttl", destination=EXPORT_PATH)
 
 t2 = datetime.now()
 
