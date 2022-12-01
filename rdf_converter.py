@@ -14,7 +14,7 @@ LIMIT = 1000
 t0 = datetime.now()
 
 print("Importando archivo '" + IMPORT_PATH +"'...")
-df = pd.read_csv(IMPORT_PATH, sep=",", quotechar='"') #import csv file
+df = pd.read_csv(IMPORT_PATH, sep=",", quotechar='"', encoding='utf8') #import csv file
 
 keys = {0: "C", 1: "C#", 2:"D", 3:"D#", 4: "E", 5:"F",
     6:"F#", 7:"G", 8:"G#", 9:"A", 10:"A#",11:"B"}
@@ -38,7 +38,11 @@ if LIMIT > 0:
     df = df.head(LIMIT)
 
 for i, row in df.iterrows():
+
     track_id = URIRef(track + urllib.parse.quote(row['id']))
+    artist_ids = ast.literal_eval(row["id_artists"])
+    artist_names = ast.literal_eval(row["artists"])
+    genre_id = URIRef(genre + urllib.parse.quote(row['genre']))
 
     g.add((track_id, RDF.type, URIRef(root + "Track")))
     g.set((track_id, RDFS.label, Literal(row['name'])))
@@ -46,17 +50,14 @@ for i, row in df.iterrows():
     g.set((track_id, URIRef(track + "duration_ms"), Literal(row['duration_ms'])))
     g.set((track_id, URIRef(track + "explicit"), Literal(row['explicit'])))
 
-    artist_ids = ast.literal_eval(row["id_artists"])
-    artist_names = ast.literal_eval(row["artists"])
-
     for i, artist_i in enumerate(artist_ids):
         artist_id = URIRef(artist + urllib.parse.quote(artist_i))
         artist_name = artist_names[i]
 
-        g.add((track_id, URIRef(track + "hasArtist"), artist_id))
-
         g.add((artist_id, RDF.type, URIRef(root + "Artist")))
         g.set((artist_id, RDFS.label, Literal(artist_name)))
+
+        g.add((track_id, URIRef(track + "hasArtist"), artist_id))
         g.add((artist_id, URIRef(artist + "hasTrack"), track_id))
 
     g.add((track_id, URIRef(track + "releaseDate"), Literal(
@@ -74,9 +75,8 @@ for i, row in df.iterrows():
     g.set((track_id, URIRef(track + "tempo"), Literal(row['tempo'])))
     g.set((track_id, URIRef(track + "time_signature"), Literal(f"{row['time_signature']}/4")))
 
-    genre_id = URIRef(genre + urllib.parse.quote(row['genre']))
-
     g.add((genre_id, RDF.type, URIRef(root + "Genre")))
+    g.add((genre_id, RDFS.label, Literal(row['genre'])))
     g.add((track_id, URIRef(track + "hasGenre"), genre_id))
     g.add((genre_id, URIRef(genre + "hasTrack"), track_id))
 

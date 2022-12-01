@@ -9494,7 +9494,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                            <http://example.org/spotify/tracks#5xcSi6kSAq1MfPXVuzC5gD> ,
                                                                                            <http://example.org/spotify/tracks#6IFOw9Ck9mWHRQgw6QrPYx> ,
                                                                                            <http://example.org/spotify/tracks#7aSnPAggMMgElb6BgXeSEw> ,
-                                                                                           <http://example.org/spotify/tracks#7yLzGp7vC3qg5FlBmUa8Rg> .
+                                                                                           <http://example.org/spotify/tracks#7yLzGp7vC3qg5FlBmUa8Rg> ;
+                                               rdfs:label "Alternative" .
 
 
 ###  http://example.org/spotify/genre#Anime
@@ -9506,7 +9507,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                       <http://example.org/spotify/artists#36zSkwftotDHslP3KUQpew> ,
                                                                                       <http://example.org/spotify/artists#5LhTec3c7dcqBvpLRWbMcf> ;
                                          <http://example.org/spotify/genre#hasTrack> <http://example.org/spotify/tracks#1P3eYnB5KiF4S2qZ7iQnOP> ,
-                                                                                     <http://example.org/spotify/tracks#2WW7zhuQ9GwY4R0L5t1xrI> .
+                                                                                     <http://example.org/spotify/tracks#2WW7zhuQ9GwY4R0L5t1xrI> ;
+                                         rdfs:label "Anime" .
 
 
 ###  http://example.org/spotify/genre#Blues
@@ -9521,7 +9523,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                      <http://example.org/spotify/tracks#3UWVVdEgTkeY4f9SjWDcxL> ,
                                                                                      <http://example.org/spotify/tracks#3cqt3YGOmC9gwNGEyyn66L> ,
                                                                                      <http://example.org/spotify/tracks#4004xnMLj5QGxWvu6JPcJ7> ,
-                                                                                     <http://example.org/spotify/tracks#74soqwldLWWA5hGXhXcMq7> .
+                                                                                     <http://example.org/spotify/tracks#74soqwldLWWA5hGXhXcMq7> ;
+                                         rdfs:label "Blues" .
 
 
 ###  http://example.org/spotify/genre#Classical
@@ -9558,7 +9561,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                          <http://example.org/spotify/tracks#7FQvFYg88JndjHvd5tBxwI> ,
                                                                                          <http://example.org/spotify/tracks#7IHEJdJhju1F2rhIiwgawx> ,
                                                                                          <http://example.org/spotify/tracks#7oUoAaz6hvfKR6EuDloRIw> ,
-                                                                                         <http://example.org/spotify/tracks#7wEql4SrP9nL5U4zxmcrVM> .
+                                                                                         <http://example.org/spotify/tracks#7wEql4SrP9nL5U4zxmcrVM> ;
+                                             rdfs:label "Classical" .
 
 
 ###  http://example.org/spotify/genre#Comedy
@@ -9575,7 +9579,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                       <http://example.org/spotify/tracks#2h3V6Hd3W9riO5woPyWLUk> ,
                                                                                       <http://example.org/spotify/tracks#3j0U9flO93VB0WcjwjBRn3> ,
                                                                                       <http://example.org/spotify/tracks#4ldWLsm6wVOpcvtGTe384A> ,
-                                                                                      <http://example.org/spotify/tracks#5lBQ3mnWsYIt5aCdgz1U9n> .
+                                                                                      <http://example.org/spotify/tracks#5lBQ3mnWsYIt5aCdgz1U9n> ;
+                                          rdfs:label "Comedy" .
 
 
 ###  http://example.org/spotify/genre#Country
@@ -9674,7 +9679,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                        <http://example.org/spotify/tracks#7DXNTiUCWJvomSGEGMr3H8> ,
                                                                                        <http://example.org/spotify/tracks#7G6l2FtQyRhQgYgut2I6i8> ,
                                                                                        <http://example.org/spotify/tracks#7kWeSMXLxUHHOkFxsS0vhP> ,
-                                                                                       <http://example.org/spotify/tracks#7vFv0yFGMJW3qVXbAd9BK9> .
+                                                                                       <http://example.org/spotify/tracks#7vFv0yFGMJW3qVXbAd9BK9> ;
+                                           rdfs:label "Country" .
 
 
 ###  http://example.org/spotify/genre#Dance
@@ -9705,7 +9711,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                      <http://example.org/spotify/tracks#5TqxbDlmcZnKA8vmPkBea3> ,
                                                                                      <http://example.org/spotify/tracks#5fkDD7aQLUmMy1EwzNm0ZB> ,
                                                                                      <http://example.org/spotify/tracks#6STHWwMa2vbr1nKArQH7hd> ,
-                                                                                     <http://example.org/spotify/tracks#6VD5vEK2wVfTG7q84pJ6EO> .
+                                                                                     <http://example.org/spotify/tracks#6VD5vEK2wVfTG7q84pJ6EO> ;
+                                         rdfs:label "Dance" .
 
 
 ###  http://example.org/spotify/genre#Electronic
@@ -9731,7 +9738,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                           <http://example.org/spotify/tracks#6vuPZX9fWESg5js2JFTQRJ> ,
                                                                                           <http://example.org/spotify/tracks#7cMFjxhbXBpOlais7KMF3j> ,
                                                                                           <http://example.org/spotify/tracks#7o67roCVsFiCt7Cf0ZLOJq> ,
-                                                                                          <http://example.org/spotify/tracks#70evTHsBFgs1AKhC5URcCz> .
+                                                                                          <http://example.org/spotify/tracks#70evTHsBFgs1AKhC5URcCz> ;
+                                              rdfs:label "Electronic" .
 
 
 ###  http://example.org/spotify/genre#Folk
@@ -9762,7 +9770,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                     <http://example.org/spotify/tracks#3cq6mwsjgygbwRIi9wVPGv> ,
                                                                                     <http://example.org/spotify/tracks#3zN4OLeBAN7LwAr442bB8E> ,
                                                                                     <http://example.org/spotify/tracks#5XVBa9dMA6ZoFAW6RuhJkH> ,
-                                                                                    <http://example.org/spotify/tracks#741OE401HO7ZCaPhEqCZ7w> .
+                                                                                    <http://example.org/spotify/tracks#741OE401HO7ZCaPhEqCZ7w> ;
+                                        rdfs:label "Folk" .
 
 
 ###  http://example.org/spotify/genre#Hip-Hop
@@ -9798,7 +9807,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                        <http://example.org/spotify/tracks#3zmduBNsQ6BPDTZAkXzG5K> ,
                                                                                        <http://example.org/spotify/tracks#4qo9CljCI7Nn9VmRxC0246> ,
                                                                                        <http://example.org/spotify/tracks#7io19rjxOFu3pGuZgBI6Pk> ,
-                                                                                       <http://example.org/spotify/tracks#79MlVxKj43tDISSISiVHJM> .
+                                                                                       <http://example.org/spotify/tracks#79MlVxKj43tDISSISiVHJM> ;
+                                           rdfs:label "Hip-Hop" .
 
 
 ###  http://example.org/spotify/genre#Indie
@@ -9841,7 +9851,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                      <http://example.org/spotify/tracks#5rPzPAaOUceS8HiAculegz> ,
                                                                                      <http://example.org/spotify/tracks#6DfRLrlXfK2GILJ8rXbPhP> ,
                                                                                      <http://example.org/spotify/tracks#7gZ3kWNtIxFgxjsm5OTVMB> ,
-                                                                                     <http://example.org/spotify/tracks#7v9Q0dAb9t7h8gJOkcJHay> .
+                                                                                     <http://example.org/spotify/tracks#7v9Q0dAb9t7h8gJOkcJHay> ;
+                                         rdfs:label "Indie" .
 
 
 ###  http://example.org/spotify/genre#Jazz
@@ -9927,7 +9938,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                     <http://example.org/spotify/tracks#6Zv4HVHfadVo3JQSSbwY7r> ,
                                                                                     <http://example.org/spotify/tracks#68vgtRHr7iZHpzGpon6Jlo> ,
                                                                                     <http://example.org/spotify/tracks#7hhclvecTpNxNNRCk7NUoc> ,
-                                                                                    <http://example.org/spotify/tracks#79f21uRzn79zWCxrsF17hj> .
+                                                                                    <http://example.org/spotify/tracks#79f21uRzn79zWCxrsF17hj> ;
+                                        rdfs:label "Jazz" .
 
 
 ###  http://example.org/spotify/genre#Movie
@@ -9956,14 +9968,16 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                      <http://example.org/spotify/tracks#4hAUynwghvrqDXs1ejKNEq> ,
                                                                                      <http://example.org/spotify/tracks#50ssiEHx556vul2XyUbxwU> ,
                                                                                      <http://example.org/spotify/tracks#6F9jdzX7CfixvCsCkW7zw9> ,
-                                                                                     <http://example.org/spotify/tracks#69ZNzwrCGP6h5ewkJQWWaT> .
+                                                                                     <http://example.org/spotify/tracks#69ZNzwrCGP6h5ewkJQWWaT> ;
+                                         rdfs:label "Movie" .
 
 
 ###  http://example.org/spotify/genre#Opera
 <http://example.org/spotify/genre#Opera> rdf:type owl:NamedIndividual ,
                                                   <http://example.org/Genre> ;
                                          <http://example.org/spotify/genre#hasArtist> <http://example.org/spotify/artists#6cXMpsP9x0SH4kFfMyVezF> ;
-                                         <http://example.org/spotify/genre#hasTrack> <http://example.org/spotify/tracks#7go4n83IV0OO5Ztd1DlDh2> .
+                                         <http://example.org/spotify/genre#hasTrack> <http://example.org/spotify/tracks#7go4n83IV0OO5Ztd1DlDh2> ;
+                                         rdfs:label "Opera" .
 
 
 ###  http://example.org/spotify/genre#Pop
@@ -10174,7 +10188,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                    <http://example.org/spotify/tracks#7mNErWes3YegbRLgZuILl5> ,
                                                                                    <http://example.org/spotify/tracks#7wC7sgcb85BS0OQZMjlJkx> ,
                                                                                    <http://example.org/spotify/tracks#7zgU5CO9E9AK0jSYcH0ESZ> ,
-                                                                                   <http://example.org/spotify/tracks#724BQpxZkHcMzltHy7YopH> .
+                                                                                   <http://example.org/spotify/tracks#724BQpxZkHcMzltHy7YopH> ;
+                                       rdfs:label "Pop" .
 
 
 ###  http://example.org/spotify/genre#Rap
@@ -10360,7 +10375,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                    <http://example.org/spotify/tracks#7k4dnllwnFDizWHAWkYXsh> ,
                                                                                    <http://example.org/spotify/tracks#7kAFSrTIOiVZ0gnHBuAH3l> ,
                                                                                    <http://example.org/spotify/tracks#73qINA7ccO03wxD8nsJalr> ,
-                                                                                   <http://example.org/spotify/tracks#75DjPjiIp2fvJDjtt41Jfs> .
+                                                                                   <http://example.org/spotify/tracks#75DjPjiIp2fvJDjtt41Jfs> ;
+                                       rdfs:label "Rap" .
 
 
 ###  http://example.org/spotify/genre#Reggae
@@ -10412,7 +10428,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                       <http://example.org/spotify/tracks#6ZXmTH4DpP07a2TvHx1EF9> ,
                                                                                       <http://example.org/spotify/tracks#6dzrCHBBKutQezMkeWaOEY> ,
                                                                                       <http://example.org/spotify/tracks#7Hw6PwVBw9wDSZXy6B3fWb> ,
-                                                                                      <http://example.org/spotify/tracks#7eJdx83TiKsVqAzLFBelMO> .
+                                                                                      <http://example.org/spotify/tracks#7eJdx83TiKsVqAzLFBelMO> ;
+                                          rdfs:label "Reggae" .
 
 
 ###  http://example.org/spotify/genre#Reggaeton
@@ -10493,7 +10510,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                          <http://example.org/spotify/tracks#68dyhT3QFybWKDSRBDgKof> ,
                                                                                          <http://example.org/spotify/tracks#7pZzzxLTZepcPfHIHI7JlG> ,
                                                                                          <http://example.org/spotify/tracks#7rJ5GJ2LQfzN81NP2n1oqo> ,
-                                                                                         <http://example.org/spotify/tracks#78Bem5yP49K6uybhAMAFdy> .
+                                                                                         <http://example.org/spotify/tracks#78Bem5yP49K6uybhAMAFdy> ;
+                                             rdfs:label "Reggaeton" .
 
 
 ###  http://example.org/spotify/genre#Rock
@@ -10935,7 +10953,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                     <http://example.org/spotify/tracks#77VW8u6inET54YAKN1RSnd> ,
                                                                                     <http://example.org/spotify/tracks#77eRSoQbDt4qHlAhUqovmy> ,
                                                                                     <http://example.org/spotify/tracks#77wwKKYeNZnXZ8xChSiSxN> ,
-                                                                                    <http://example.org/spotify/tracks#78PKCefXwDLbl4FVO1Pjzh> .
+                                                                                    <http://example.org/spotify/tracks#78PKCefXwDLbl4FVO1Pjzh> ;
+                                        rdfs:label "Rock" .
 
 
 ###  http://example.org/spotify/genre#Ska
@@ -11019,7 +11038,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                    <http://example.org/spotify/tracks#7ixiCZEHWHc8FxaQXQh2P4> ,
                                                                                    <http://example.org/spotify/tracks#7n3REqDfZBpkd0bEpGu2H3> ,
                                                                                    <http://example.org/spotify/tracks#7nXq1vaZiz7PdbfojpPjW5> ,
-                                                                                   <http://example.org/spotify/tracks#77XwQEPxhY65b8rPszET9u> .
+                                                                                   <http://example.org/spotify/tracks#77XwQEPxhY65b8rPszET9u> ;
+                                       rdfs:label "Ska" .
 
 
 ###  http://example.org/spotify/genre#Soul
@@ -11291,7 +11311,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                     <http://example.org/spotify/tracks#7zVA5iOWnPWcgNaCGXdo9o> ,
                                                                                     <http://example.org/spotify/tracks#7zkLpY72g6lKQbiHDqri1S> ,
                                                                                     <http://example.org/spotify/tracks#72SpPFrMYCXLB3Fbw9tEgf> ,
-                                                                                    <http://example.org/spotify/tracks#76xddM2irVQCbuBoVbaElZ> .
+                                                                                    <http://example.org/spotify/tracks#76xddM2irVQCbuBoVbaElZ> ;
+                                        rdfs:label "Soul" .
 
 
 ###  http://example.org/spotify/genre#Soundtrack
@@ -11349,7 +11370,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                           <http://example.org/spotify/tracks#7AcxlL11vz2n7NvmQj7t0V> ,
                                                                                           <http://example.org/spotify/tracks#7EW4LyVLnjVqArsMIqiIHE> ,
                                                                                           <http://example.org/spotify/tracks#70hnJrzKaQwTH1Z2iZi8QC> ,
-                                                                                          <http://example.org/spotify/tracks#769geiA8btidGHda4BBDOJ> .
+                                                                                          <http://example.org/spotify/tracks#769geiA8btidGHda4BBDOJ> ;
+                                              rdfs:label "Soundtrack" .
 
 
 ###  http://example.org/spotify/genre#World
@@ -11409,7 +11431,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                      <http://example.org/spotify/tracks#67VjdDhTa5jzQxHGe6f26r> ,
                                                                                      <http://example.org/spotify/tracks#7z3N2W7Xz1t2G2sAO8wFVH> ,
                                                                                      <http://example.org/spotify/tracks#76D5nfZbYzZYfUZKGy73jy> ,
-                                                                                     <http://example.org/spotify/tracks#76pllrWpfiCoLGhijQBYhO> .
+                                                                                     <http://example.org/spotify/tracks#76pllrWpfiCoLGhijQBYhO> ;
+                                         rdfs:label "World" .
 
 
 ###  http://example.org/spotify/genre#Children%27s%20Music
@@ -11427,7 +11450,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                                     <http://example.org/spotify/tracks#5TlaFYH6anGlDGOQGBW1Qa> ,
                                                                                                     <http://example.org/spotify/tracks#51icKrZozaCXpOONqWCp9K> ,
                                                                                                     <http://example.org/spotify/tracks#6NSJOIyKYcRZh28Kf0URTw> ,
-                                                                                                    <http://example.org/spotify/tracks#7b8mJ4wVjWpe7yeYGus0rL> .
+                                                                                                    <http://example.org/spotify/tracks#7b8mJ4wVjWpe7yeYGus0rL> ;
+                                                        rdfs:label "Children's Music" .
 
 
 ###  http://example.org/spotify/genre#Children%E2%80%99s%20Music
@@ -11504,7 +11528,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                                           <http://example.org/spotify/tracks#74WIE2htPZwxx4HgGhpf8i> ,
                                                                                                           <http://example.org/spotify/tracks#779ooI3rBd0CLqCiiJmtVo> ,
                                                                                                           <http://example.org/spotify/tracks#78XFPcFYN8YFOHjtVwnPsl> ,
-                                                                                                          <http://example.org/spotify/tracks#79pY2Z5eFvXMt9bSdHLrnA> .
+                                                                                                          <http://example.org/spotify/tracks#79pY2Z5eFvXMt9bSdHLrnA> ;
+                                                              rdfs:label "Children’s Music" .
 
 
 ###  http://example.org/spotify/genre#R%26B
@@ -11529,7 +11554,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                                      <http://example.org/spotify/tracks#5p0KCAuu5nrHpTuAIhHdLw> ,
                                                                                      <http://example.org/spotify/tracks#6ubNZ5edKBKH3MQKatUY3S> ,
                                                                                      <http://example.org/spotify/tracks#7DFnq8FYhHMCylykf6ZCxA> ,
-                                                                                     <http://example.org/spotify/tracks#7J41dYQolQJEtj3UmKLu5r> .
+                                                                                     <http://example.org/spotify/tracks#7J41dYQolQJEtj3UmKLu5r> ;
+                                         rdfs:label "R&B" .
 
 
 ###  http://example.org/spotify/tracks#0AMKZWRgdFfGYYTxiWrwwH

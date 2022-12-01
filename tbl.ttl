@@ -2171,6 +2171,7 @@ artist:7zDPvKo7b0I7OPefCwqrsE a <Artist> ;
     artist:hasTrack track:4kVxStqN7DeoZje5aidAn3 .
 
 genre:Opera a <Genre> ;
+    rdfs:label "Opera" ;
     genre:hasTrack track:7go4n83IV0OO5Ztd1DlDh2 .
 
 track:hasArtist rdfs:domain <Track> ;
@@ -2657,6 +2658,7 @@ artist:7lzordPuZEXxwt9aoVZYmG a <Artist> ;
         track:7fJnj6rso7N95oztvsxrWD .
 
 genre:Anime a <Genre> ;
+    rdfs:label "Anime" ;
     genre:hasTrack track:1P3eYnB5KiF4S2qZ7iQnOP,
         track:2WW7zhuQ9GwY4R0L5t1xrI .
 
@@ -24079,6 +24081,7 @@ artist:6FBDaR13swtiWwGhX1WQsP a <Artist> ;
         track:4N9fFHRxns1B86F8YTneBz .
 
 genre:Blues a <Genre> ;
+    rdfs:label "Blues" ;
     genre:hasTrack track:115a4lQhDJGnu4QVSa8bUW,
         track:3UWVVdEgTkeY4f9SjWDcxL,
         track:3cqt3YGOmC9gwNGEyyn66L,
@@ -24290,6 +24293,7 @@ artist:4Z8W4fKeB5YxbusRsdQVPb a <Artist> ;
         track:7Hg6a7tZsVTkXnBUepjZU6 .
 
 genre:Children%27s%20Music a <Genre> ;
+    rdfs:label "Children's Music" ;
     genre:hasTrack track:0Fyj9w0HVfjoxm9S8nGClt,
         track:51icKrZozaCXpOONqWCp9K,
         track:5POM2lseA6sONqP0O9pxWC,
@@ -24298,6 +24302,7 @@ genre:Children%27s%20Music a <Genre> ;
         track:7b8mJ4wVjWpe7yeYGus0rL .
 
 genre:Comedy a <Genre> ;
+    rdfs:label "Comedy" ;
     genre:hasTrack track:1RgT64Zv9pQkwOxMJc8sAJ,
         track:2BFnHiGCfLy5Z96yMeO50g,
         track:2h3V6Hd3W9riO5woPyWLUk,
@@ -24475,6 +24480,7 @@ artist:23zg3TcAtWQy7J6upgbUnj a <Artist> ;
         track:7z3N2W7Xz1t2G2sAO8wFVH .
 
 genre:Movie a <Genre> ;
+    rdfs:label "Movie" ;
     genre:hasTrack track:0yM3VmM8gHEVGViKvAbQkc,
         track:2QSAj76Ba6aMFX9RlXdUdO,
         track:3Dupb5AcaVFErlSSfl3szW,
@@ -24512,6 +24518,7 @@ artist:1ZwdS5xdxEREPySFridCfh a <Artist> ;
         track:7k4dnllwnFDizWHAWkYXsh .
 
 genre:Hip-Hop a <Genre> ;
+    rdfs:label "Hip-Hop" ;
     genre:hasTrack track:0CtkjgZpkgnW7U6WmHsakD,
         track:0Cw5iiA8OHWIhuIIA8u8N5,
         track:0FEph6sqROmG2lfRh3Dwku,
@@ -24525,6 +24532,7 @@ genre:Hip-Hop a <Genre> ;
         track:7io19rjxOFu3pGuZgBI6Pk .
 
 genre:R%26B a <Genre> ;
+    rdfs:label "R&B" ;
     genre:hasTrack track:0cv1Mnb47oMvjVKMc2cyZw,
         track:0qi4rNWFM8M3BmAqcQ3sQY,
         track:1xg1yGPy1Y3YUf44s6TB1o,
@@ -24617,6 +24625,7 @@ artist:4tZwfgrHOc3mvqYlEYSvVi a <Artist> ;
         track:7v9Q0dAb9t7h8gJOkcJHay .
 
 genre:Classical a <Genre> ;
+    rdfs:label "Classical" ;
     genre:hasTrack track:09yjSh8TQmpwNRdcWQySIg,
         track:0BeN6CA7RuwNdJa64NV1l0,
         track:0l4nTjV36R1XxDWMaMRhQa,
@@ -24632,6 +24641,7 @@ genre:Classical a <Genre> ;
         track:7wEql4SrP9nL5U4zxmcrVM .
 
 genre:Folk a <Genre> ;
+    rdfs:label "Folk" ;
     genre:hasTrack track:03o0bsrdp7yimIo8I2tzAZ,
         track:0krGrryTVif71gYlmkJBoI,
         track:10CsMKlayFJOj4Lai9tAvm,
@@ -24647,6 +24657,7 @@ genre:Folk a <Genre> ;
         track:741OE401HO7ZCaPhEqCZ7w .
 
 genre:Electronic a <Genre> ;
+    rdfs:label "Electronic" ;
     genre:hasTrack track:098ttCNmncrO4YvqWUNMvn,
         track:1IsvXZXAV9EBC4hBKW6yDN,
         track:1NeLwFETswx8Fzxl2AFl91,
@@ -24663,6 +24674,7 @@ genre:Electronic a <Genre> ;
         track:7o67roCVsFiCt7Cf0ZLOJq .
 
 genre:Alternative a <Genre> ;
+    rdfs:label "Alternative" ;
     genre:hasTrack track:0bIye27QbOvSrTAmCViX5O,
         track:0d28khcov6AiegSCpG5TuT,
         track:1BH4LMGVMLBGc9uEJdm8D8,
@@ -24680,6 +24692,7 @@ genre:Alternative a <Genre> ;
         track:7yLzGp7vC3qg5FlBmUa8Rg .
 
 genre:Dance a <Genre> ;
+    rdfs:label "Dance" ;
     genre:hasTrack track:0J1Wfjo9H3R62yaCuuNDZX,
         track:117PkfBYudl1lSoFFAvOM4,
         track:15f8Cv8RXUlOOCIf2oaceN,
@@ -24738,6 +24751,7 @@ artist:5eAWCfyUhZtHHtBdNk56l1 a <Artist> ;
         track:6gCVA6ja6g0foIsWv0RuSZ .
 
 genre:Indie a <Genre> ;
+    rdfs:label "Indie" ;
     genre:hasTrack track:0IW0qaeyxL5Et4UG2MrJKB,
         track:0cZDC7uxNK8lqQ3GgyvCnD,
         track:0cup93aPHyhq9ILBhiRaTs,
@@ -24759,6 +24773,7 @@ genre:Indie a <Genre> ;
         track:7v9Q0dAb9t7h8gJOkcJHay .
 
 genre:World a <Genre> ;
+    rdfs:label "World" ;
     genre:hasTrack track:0BRHnOFm6sjxN1i9LJrUDu,
         track:0Q9jC6LNRtrgBRYeq7h4pS,
         track:0ZLIEkxppDquQGr0LAxahK,
@@ -24785,6 +24800,7 @@ genre:World a <Genre> ;
         track:7z3N2W7Xz1t2G2sAO8wFVH .
 
 genre:Reggae a <Genre> ;
+    rdfs:label "Reggae" ;
     genre:hasTrack track:0QUFqmWGxP7ApKHh8v4hwk,
         track:0QyBdoz2JktWEo111DBEx9,
         track:1WgOedf4pKmgepml1CMW6o,
@@ -24815,6 +24831,7 @@ genre:Reggae a <Genre> ;
         track:7eJdx83TiKsVqAzLFBelMO .
 
 genre:Soundtrack a <Genre> ;
+    rdfs:label "Soundtrack" ;
     genre:hasTrack track:12oCf8psxoCNrYVLUDmbbw,
         track:15yScQGLH5QOuXm9XbhnPb,
         track:1DdyioI2yXhLwR1pn5Hczk,
@@ -24885,6 +24902,7 @@ artist:0gWNSMYCSHF4wxIs1XTSDh a <Artist> ;
         track:7EW4LyVLnjVqArsMIqiIHE .
 
 genre:Jazz a <Genre> ;
+    rdfs:label "Jazz" ;
     genre:hasTrack track:0815caqt2Lytro5EIzMufT,
         track:0AMKZWRgdFfGYYTxiWrwwH,
         track:0JL9TZip7mL7iwC5EOkALS,
@@ -24925,6 +24943,7 @@ genre:Jazz a <Genre> ;
         track:7hhclvecTpNxNNRCk7NUoc .
 
 genre:Reggaeton a <Genre> ;
+    rdfs:label "Reggaeton" ;
     genre:hasTrack track:0Gh6QG4Z1pSvIo7btP1Ux4,
         track:0HIoLXQTYfRvsDGifz8cWY,
         track:0aj2QKJvz6CePykmlTApiD,
@@ -24965,6 +24984,7 @@ genre:Reggaeton a <Genre> ;
         track:7rJ5GJ2LQfzN81NP2n1oqo .
 
 genre:Ska a <Genre> ;
+    rdfs:label "Ska" ;
     genre:hasTrack track:03ksBSATYMX1491yJ3mqok,
         track:0DiWol3AO6WpXZgp0goxAV,
         track:0HIHv985ZmGG2YO0AeAoR8,
@@ -25007,6 +25027,7 @@ genre:Ska a <Genre> ;
         track:7nXq1vaZiz7PdbfojpPjW5 .
 
 genre:Children%E2%80%99s%20Music a <Genre> ;
+    rdfs:label "Children’s Music" ;
     genre:hasTrack track:0COqiPhxzoWICwFCS4eZcp,
         track:0Io1kinEi9fp1b4Maf84yO,
         track:0NWWDumjD2TCrR6iV6ZFgR,
@@ -25110,6 +25131,7 @@ track:0tzixmHNQfE6S6SirSToxW a <Track> ;
     track:valence 2.85e-01 .
 
 genre:Country a <Genre> ;
+    rdfs:label "Country" ;
     genre:hasTrack track:01CnYyPXMFRzOFVQBU8WMb,
         track:0ElpjZyX8YBiXuYcDC1Ci9,
         track:0M7mWKqwTIaVjYyxfZmtTa,
@@ -25168,6 +25190,7 @@ genre:Country a <Genre> ;
         track:7vFv0yFGMJW3qVXbAd9BK9 .
 
 genre:Pop a <Genre> ;
+    rdfs:label "Pop" ;
     genre:hasTrack track:00Mb3DuaIH1kjrwOku9CGU,
         track:02jcEwywffn3Tsb48fXmlW,
         track:04OjnEpeFNwciB46XQjTxB,
@@ -25253,6 +25276,7 @@ genre:Pop a <Genre> ;
         track:7zgU5CO9E9AK0jSYcH0ESZ .
 
 genre:Rap a <Genre> ;
+    rdfs:label "Rap" ;
     genre:hasTrack track:024Q1MI4uaYHF6j2Q2ZYgF,
         track:06UPCXzhIsXnceSXmKLMEY,
         track:0DW5anNzTO7h0OlKqFsVQ6,
@@ -25349,6 +25373,7 @@ genre:Rap a <Genre> ;
         track:7kAFSrTIOiVZ0gnHBuAH3l .
 
 genre:Soul a <Genre> ;
+    rdfs:label "Soul" ;
     genre:hasTrack track:00iPtInUFFoMjBnoBnxIgl,
         track:04H65kgUt141BQqYAhjmMZ,
         track:0AiTIiCQ15NW8QHQwSxKuR,
@@ -25487,6 +25512,7 @@ genre:Soul a <Genre> ;
         track:7zkLpY72g6lKQbiHDqri1S .
 
 genre:Rock a <Genre> ;
+    rdfs:label "Rock" ;
     genre:hasTrack track:04NGX0b5Tgs7VsErfn5OA1,
         track:06p2Ij0lXD45LODQDCov0u,
         track:09OpntwPHuNICsyEt1ETpE,
