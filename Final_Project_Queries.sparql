@@ -1,0 +1,50 @@
+base <http://example.org/spotify#>
+prefix : <http://example.org/spotify#>
+prefix artist: <http://example.org/spotify/artists#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix track: <http://example.org/spotify/tracks#>
+prefix genre: <http://example.org/spotify/genre#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# 1era Query - Encontrar la canción más bailable de “Gorillaz”
+SELECT ?track ?artist ?danceability WHERE {
+    ?song rdfs:label ?track ;
+    track:hasArtist artist:3AA28KZvwAUcZuOKwyblJQ ;
+    track:danceability ?danceability .
+    artist:3AA28KZvwAUcZuOKwyblJQ rdfs:label ?artist .
+} ORDER BY DESC(?danceability)
+
+# 2da Query - Encontrar la canción más reciente del género Ska
+SELECT ?track ?artist ?releaseDate WHERE {
+    ?song rdfs:label ?track ;
+    track:hasGenre genre:Ska;
+    track:releaseDate ?releaseDate .
+    ?artist artist:hasTrack ?song
+} 
+ORDER BY DESC(?releaseDate)
+LIMIT 1
+
+# 3era Query - Encontrar el nombre de la canción más larga que tenga 3 o más colaboradores
+SELECT ?name (COUNT (?artist) as ?artist_count) ?duration WHERE {
+    ?track rdfs:label ?name ;
+    track:hasArtist ?artist ;
+    track:duration_ms ?duration.
+} GROUP BY ?name ?duration HAVING(?artist_count >= 3) ORDER BY DESC(?duration) LIMIT 1
+
+# 4ta Query - Encontrar artistas con el mismo nombre.
+SELECT ?artist1 ?artist2 ?name WHERE {
+    ?artist1 rdf:type <Artist> ;
+    rdfs:label ?name .
+    ?artist2 rdf:type <Artist> ;
+    rdfs:label ?name .
+    FILTER(?artist1 != ?artist2)
+} ORDER BY ASC(?name)
+
+# 5ta Query - Encontrar los artistas que han hecho mas canciones del mismo genero
+SELECT ?artist (COUNT(?genre) as ?genre_count) WHERE {
+    ?song rdfs:label ?track;
+    track:hasGenre ?genre .
+    ?artist artist:hasTrack ?song 
+} GROUP BY ?genre ?artist ORDER BY DESC (?genre_count) 
